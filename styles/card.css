@@ -1,24 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: content-box;
-    font-size: 62.5%;
-}
-
-body{
-    height: 100vh;
-    width: 100vw;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: sans-serif;
-
-    color: white;
-    background: linear-gradient(to right,#ff784f, #ad4d4d);
-}
-
 .card{
     position: relative;
     display: flex;
@@ -26,12 +5,12 @@ body{
     align-items: center;
     justify-content: center;
 
-
-    background-color: #FF5439;
-
     height: 468px;
     width: 350px;
-    border-radius: 15px;
+    border-radius: var(--main-border-radius);
+
+    background-color: var(--main-color-hex);
+
     z-index: 1;
 }
 
@@ -40,33 +19,34 @@ body{
     top: 0;
     left: 0;
 
-    background-color: #FF5439;
     width: 25px;
     height: 25px;
-    border-top-left-radius: 15px;
-
+    border-top-left-radius: var(--main-border-radius);
+    
+    background-color: var(--main-color-hex);
 }
 .top-right{
     position: absolute;
     top: 0;
     right: 0;
-
-    background-color: #FF5439;
+    
     width: 25px;
     height: 25px;
-    border-top-right-radius: 15px;
+    border-top-right-radius: var(--main-border-radius);
 
+    background-color: var(--main-color-hex);
 }
 
 .bottom-left{
     position: absolute;
     bottom: 0;
     left: 0;
-
-    background-color: #FF5439;
+    
     width: 25px;
     height: 25px;
-    border-bottom-left-radius: 15px;
+    border-bottom-left-radius: var(--main-border-radius);
+
+    background-color: var(--main-color-hex);
 
 }
 
@@ -74,12 +54,13 @@ body{
     position: absolute;
     bottom: 0;
     right: 0;
-
-    background-color: #FF5439;
+    
     width: 25px;
     height: 25px;
+    border-bottom-right-radius: var(--main-border-radius);
 
-    border-bottom-right-radius: 15px;
+    background-color: var(--main-color-hex);
+
 }
 
 .card-container{
@@ -87,39 +68,41 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: -2;
     gap: 15px;
-
-
+    
     height: 96%;
     width: 96%;
+    border-radius: var(--main-border-radius);
+    
     background: linear-gradient(-38deg, rgba(95, 21,21, 1), rgba(255, 32, 32, 1)); 
-    border-radius: 15px;
-    z-index: -2;
 }
 .background-image{
     position: absolute;
-    background-image: url("/Season_7_Poster_3.png");
+    z-index: -1;
+    
+    height: 96%;
+    width: 96%;
+    
+    background-image: url("../imgs/Season_7_Poster_3.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: var(--main-border-radius);
+    
     opacity: 16%;
-
-    height: 96%;
-    width: 96%;
-    z-index: -1;
-    border-radius: 15px;
 }
 
 .book-title-container{
     text-align: center;
-    background-color: rgba(255, 84, 57, 0.72);
-
+    
     width: 80%;
     height: fit-content;
     padding: 5px 10px;
     border-radius: 4px;
-    
     margin-bottom: 10px;
+    
+    background-color: var(--main-color-rgba);
 
 }
 
@@ -132,25 +115,40 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 8px;
+    
     width: 80%;
     height: 50%;
     padding: 10px 10px;
-    background-color: rgba(255, 84, 57, 0.72);
     border-radius: 4px;
+    
+    background-color: var(--main-color-rgba);
 
-    gap: 8px;
 }
 
 .text-container{
-    font-size: 3.6rem;
-
     display: flex;
     align-items: center;
-
-    width: 200px;
+    
     gap: 15px;
+    width: 90%;
+    height: 35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    
+    font-size: 3.6rem;
 }
 
+.book-text{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    overflow: hidden;
+
+    height: 100%;
+}
 
 
 .icon{
@@ -160,6 +158,7 @@ body{
 .mark-read-container{
     display: flex;
     align-items: center;
+    
     gap: 10px;
     margin-top: auto;
 
@@ -174,17 +173,16 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3px 0;
-
+    
     width: 85%;
-    background-color: rgba(255, 84, 57, 0.72);
-
+    padding: 3px 0;
     border-radius: 15px;
     
+    background-color: var(--main-color-rgba);
+
     font-size: 2.4rem;
 }
 
 #book-id{
     font-size: 1.1rem;
 }
-

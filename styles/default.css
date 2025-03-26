@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-size: 62.5%;
+}
+
+:root{
+    --main-color-hex: #FF5439;
+    --main-color-rgba: rgba(255, 84, 57, 0.72);
+    --main-border-radius: 15px;
+}
+

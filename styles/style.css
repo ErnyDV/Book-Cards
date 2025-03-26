@@ -1,0 +1,24 @@
+
+body{
+
+    height: 100vh;
+    width: 100vw;
+    
+
+    font-family: sans-serif;
+
+    color: white;
+    background: linear-gradient(to right,#ff784f, #ad4d4d);
+}
+
+
+.main-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    
+    height: 100%;
+    width: 100%;
+}
+
