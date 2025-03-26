@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: content-box;
+    font-size: 62.5%;
 }
 
 body{
@@ -14,5 +16,175 @@ body{
     font-family: sans-serif;
 
     color: white;
-    background: linear-gradient(to right,#67B26F, #4ca2cd);
+    background: linear-gradient(to right,#ff784f, #ad4d4d);
 }
+
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    background-color: #FF5439;
+
+    height: 468px;
+    width: 350px;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.top-left{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: #FF5439;
+    width: 25px;
+    height: 25px;
+    border-top-left-radius: 15px;
+
+}
+.top-right{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    background-color: #FF5439;
+    width: 25px;
+    height: 25px;
+    border-top-right-radius: 15px;
+
+}
+
+.bottom-left{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    background-color: #FF5439;
+    width: 25px;
+    height: 25px;
+    border-bottom-left-radius: 15px;
+
+}
+
+.bottom-right{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    background-color: #FF5439;
+    width: 25px;
+    height: 25px;
+
+    border-bottom-right-radius: 15px;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+
+    height: 96%;
+    width: 96%;
+    background: linear-gradient(-38deg, rgba(95, 21,21, 1), rgba(255, 32, 32, 1)); 
+    border-radius: 15px;
+    z-index: -2;
+}
+.background-image{
+    position: absolute;
+    background-image: url("/Season_7_Poster_3.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 16%;
+
+    height: 96%;
+    width: 96%;
+    z-index: -1;
+    border-radius: 15px;
+}
+
+.book-title-container{
+    text-align: center;
+    background-color: rgba(255, 84, 57, 0.72);
+
+    width: 80%;
+    height: fit-content;
+    padding: 5px 10px;
+    border-radius: 4px;
+    
+    margin-bottom: 10px;
+
+}
+
+#book-title{
+    font-size: 2.4rem;
+    font-weight: 300;
+
+}
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 50%;
+    padding: 10px 10px;
+    background-color: rgba(255, 84, 57, 0.72);
+    border-radius: 4px;
+
+    gap: 8px;
+}
+
+.text-container{
+    font-size: 3.6rem;
+
+    display: flex;
+    align-items: center;
+
+    width: 200px;
+    gap: 15px;
+}
+
+
+
+.icon{
+    height: 35px;
+}
+
+.mark-read-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+
+    font-size: 2.6rem;
+}
+
+.icon-read{
+    height: 20px;
+}
+
+.id-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3px 0;
+
+    width: 85%;
+    background-color: rgba(255, 84, 57, 0.72);
+
+    border-radius: 15px;
+    
+    font-size: 2.4rem;
+}
+
+#book-id{
+    font-size: 1.1rem;
+}
+
