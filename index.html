@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Practice 1</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-</head>
-<body>
-    <div class="main-container">
-        <div class="card">
-            <div class="top-left"></div>
-            <div class="top-right"></div>
-            <div class="bottom-left"></div>
-            <div class="bottom-right"></div>
-            <div class="card-container">
-                <div class="background-image"></div>
-                <div class="book-title-container">
-                    <h1 id="book-title">My Hero Academia</h1>
-                </div>
-                <div class="card-content">
-                    <div class="text-container">
-                        <img class="icon" src="signature_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="">
-                        <p id="book-author"> Kohei Horikshi</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Javascript Practice 1</title>
+        <link rel="stylesheet" href="styles/default.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/card.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="card">
+                <div class="top-left"></div>
+                <div class="top-right"></div>
+                <div class="bottom-left"></div>
+                <div class="bottom-right"></div>
+                <div class="card-container">
+                    <div class="background-image"></div>
+                    <div class="book-title-container">
+                        <h1 id="book-title">My Hero Academia</h1>
                     </div>
-                    <div class="text-container">
-                        <img class="icon" src="auto_stories_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24(1).svg" alt="">
-                        <p id="book-pages">3928</p>
-                    </div>
-                    
-                    <div class="text-container">
-                        <img class="icon" src="check_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24(1).svg" alt="">
-                        <p id="book-read"> Read</p>
-                    </div>
-                    
-                    <div class="mark-read-container">
-                        <p>Mark as Read</p>
-                        <img class="icon-read" src="check_box_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24(1).svg" alt="">
-                    </div>
+                    <div class="card-content">
+                        <div class="text-container">
+                            <img class="icon" src="icons/author.svg" alt="">
+                            <p id="book-author"> Kohei Horikshi</p>
+                        </div>
+                        <div class="text-container">
+                            <img class="icon" src="icons/pages.svg" alt="">
+                            <p id="book-pages">3928</p>
+                        </div>
+                        
+                        <div class="text-container">
+                            <img class="icon" src="icons/check.svg" alt="">
+                            <p id="book-read"> Read</p>
+                        </div>
+                        
+                        <div class="mark-read-container">
+                            <p>Mark as Read</p>
+                            <img class="icon-read" src="icons/checkbox.svg" alt="">
+                        </div>
                     </div>
                     <div class="id-container">
                         <p>ID</p>
@@ -45,6 +47,43 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="card">
+                <div class="top-left"></div>
+                <div class="top-right"></div>
+                <div class="bottom-left"></div>
+                <div class="bottom-right"></div>
+                <div class="card-container">
+                    <div class="background-image"></div>
+                    <div class="book-title-container">
+                        <h1 id="book-title" class="book-text">My Hero Academia</h1>
+                    </div>
+                    <div class="card-content">
+                        <div class="text-container">
+                            <img class="icon" src="icons/author.svg" alt="">
+                            <p id="book-author" class="book-text"> Kohei Horikshi asdfsadfsadfsadfasdfasdfsafsd  asdfasdfsdasdfasdfs</p>
+                        </div>
+                        <div class="text-container">
+                            <img class="icon" src="icons/pages.svg" alt="">
+                            <p id="book-pages" class="book-text">3928asdfadsasdfasdfasdfasdfdsfsfasdfasdfsadf1414141242142442142414112444424</p>
+                        </div>
+                        
+                        <div class="text-container">
+                            <img class="icon" src="icons/cross.svg" alt="">
+                            <p id="book-read"> Not read yet</p>
+                        </div>
+                        
+                        <div class="mark-read-container">
+                            <p>Mark as Read</p>
+                            <img class="icon-read" src="icons/uncheckedbox.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="id-container">
+                        <p>ID</p>
+                        <p id="book-id">7583e58f-c707-48ac-97d9-1de053d904db</p>
+                    </div>
+                </div>
+            </div>
+        <div>
     </body>
 </html>
