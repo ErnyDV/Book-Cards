@@ -7,11 +7,13 @@
         <link rel="stylesheet" href="styles/default.css">
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="styles/card.css">
-        <script src="script.js"></script>
+        <link rel="stylesheet" href="styles/addCard.css">
+        <script defer src="js/cardCreation.js"></script>
     </head>
     <body>
+        <h1 class="start-text">Click the empty card to create a new book!</h1>
         <div class="main-container">
-            <div class="card">
+            <!-- <div class="card">
                 <div class="top-left"></div>
                 <div class="top-right"></div>
                 <div class="bottom-left"></div>
@@ -24,7 +26,7 @@
                     <div class="card-content">
                         <div class="text-container">
                             <img class="icon" src="icons/author.svg" alt="">
-                            <p id="book-author"> Kohei Horikshi</p>
+                            <p id="book-author" class="book-text"> Kohei Horikshi</p>
                         </div>
                         <div class="text-container">
                             <img class="icon" src="icons/pages.svg" alt="">
@@ -38,7 +40,7 @@
                         
                         <div class="mark-read-container">
                             <p>Mark as Read</p>
-                            <img class="icon-read" src="icons/checkbox.svg" alt="">
+                            <img id="icon-read" src="icons/checkbox.svg" alt="">
                         </div>
                     </div>
                     <div class="id-container">
@@ -46,43 +48,45 @@
                         <p id="book-id">7583e58f-c707-48ac-97d9-1de053d904db</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="card">
+            <!-- <div class="card">
                 <div class="top-left"></div>
                 <div class="top-right"></div>
                 <div class="bottom-left"></div>
                 <div class="bottom-right"></div>
                 <div class="card-container">
-                    <div class="background-image"></div>
                     <div class="book-title-container">
-                        <h1 id="book-title" class="book-text">My Hero Academia</h1>
+                        <input class="input" type="text" placeholder="Book Title">
                     </div>
                     <div class="card-content">
                         <div class="text-container">
                             <img class="icon" src="icons/author.svg" alt="">
-                            <p id="book-author" class="book-text"> Kohei Horikshi asdfsadfsadfsadfasdfasdfsafsd  asdfasdfsdasdfasdfs</p>
+                            <input class="input" id="author-input" type="text" placeholder="Author Name">
                         </div>
                         <div class="text-container">
                             <img class="icon" src="icons/pages.svg" alt="">
-                            <p id="book-pages" class="book-text">3928asdfadsasdfasdfasdfasdfdsfsfasdfasdfsadf1414141242142442142414112444424</p>
+                            <input class="input" id="pages-input" type="number" placeholder="Amount of Pages">
                         </div>
                         
-                        <div class="text-container">
-                            <img class="icon" src="icons/cross.svg" alt="">
-                            <p id="book-read"> Not read yet</p>
-                        </div>
                         
                         <div class="mark-read-container">
                             <p>Mark as Read</p>
-                            <img class="icon-read" src="icons/uncheckedbox.svg" alt="">
+                            <img id="icon-read" src="icons/uncheckedbox.svg" alt="">
                         </div>
                     </div>
-                    <div class="id-container">
-                        <p>ID</p>
-                        <p id="book-id">7583e58f-c707-48ac-97d9-1de053d904db</p>
+                    <div class="background-container">
+                        <input class="input" id="image-input" type="text" placeholder="Background Image Link">
+                    </div>
+                    <div class="options">
+                        <button class="card-submit" type="submit">Finish</button>
+                        <button class="card-cancel" type="button">Cancel</button>
                     </div>
                 </div>
+            </div> -->
+
+            <div class="card" id="add-card">
+                <img class="icon-lg"  src="icons/add.svg" alt="">
             </div>
         <div>
     </body>
