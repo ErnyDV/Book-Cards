@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: content-box;
+    box-sizing: border-box;
     font-size: 62.5%;
 }
 
@@ -11,3 +11,11 @@
     --main-border-radius: 15px;
 }
 
+.icon-lg{
+    height: 65px;
+    width: 65px;
+}
+
+button{
+    cursor: pointer;
+}

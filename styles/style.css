@@ -1,24 +1,43 @@
 
-body{
 
+html{
+    box-sizing: border-box;
     height: 100vh;
-    width: 100vw;
-    
+    min-width: 100%;
+    max-width: 100vw;
+    background: linear-gradient(to right,#ff784f, #ad4d4d);
+    padding: 15px;
+}
 
+body{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     font-family: sans-serif;
 
+    height: 100%;
+    width: 100%;
     color: white;
-    background: linear-gradient(to right,#ff784f, #ad4d4d);
 }
 
 
 .main-container{
+    box-sizing: content-box;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+
     gap: 15px;
     
-    height: 100%;
     width: 100%;
+    height: 100%;
+    
+}
+
+.start-text{
+    margin-top: 35px;
+    font-size: 2.6rem;
 }
 
