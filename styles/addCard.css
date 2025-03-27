@@ -65,20 +65,21 @@
 }
 
 .error-card{
-    animation: errorAnim 0.5s linear;
+    animation: errorAnim 0.3s linear;
 }
 
 @keyframes errorAnim {
     0%{
-        transform: translateX(8px);
+        transform: translateX(15px);
 
     }
     
     50%{
-        transform: translateX(-8px)
+        transform: translateX(-15px)
     }
 
     100%{
         transform: translateX(0px);
     }
 }
+
