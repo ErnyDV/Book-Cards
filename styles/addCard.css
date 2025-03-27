@@ -1,0 +1,84 @@
+.input{
+    height: 30px;
+    width: 80%;
+
+    border: rgb(248, 152, 97) 2px solid;
+    background-color: var(--main-color-hex);
+
+    outline: none;
+    font-size: 1.6rem;
+    color: white;
+}
+
+.input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+
+.input[type=number]{
+    -moz-appearance:textfield;
+}
+
+.background-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 85%;
+    padding: 8px 0;
+    border-radius: 15px;
+    
+    background-color: var(--main-color-rgba);
+
+    font-size: 2.4rem;
+}
+
+.input::placeholder{
+    text-align: center;
+    color: white;
+    opacity: 0.8;
+}
+
+.card-submit{
+    font-size: 2rem;
+    padding: 2px 25px;
+    background-color: rgb(46, 134, 12);
+    border: none;
+    color: white;
+    border-radius: 5px;
+
+    margin-right: 5px;
+}
+
+.card-cancel{
+    font-size: 2rem;
+    padding: 2px 25px;
+    background-color: rgb(196, 25, 25);
+    border: none;
+    color: white;
+    border-radius: 5px;
+
+
+}
+
+#add-card{
+    cursor: pointer;
+}
+
+.error-card{
+    animation: errorAnim 0.5s linear;
+}
+
+@keyframes errorAnim {
+    0%{
+        transform: translateX(8px);
+
+    }
+    
+    50%{
+        transform: translateX(-8px)
+    }
+
+    100%{
+        transform: translateX(0px);
+    }
+}
