@@ -2,12 +2,13 @@ let cardCreationInProcess = false;
 const addCardButton = document.querySelector('#add-card')
 const myLibrary = [];
 
-function Book(title, author, pages, read, id){
+function Book(title, author, pages, read, element, id){
     this.title = title;
     this.author = author;
     this.pages = pages
     this.read = read
-    this.id = crypto.randomUUID()
+    this.element = element
+    this.id = id
 }
 
 function createEmptyCard(){
@@ -61,42 +62,38 @@ function formError() {
     const pages = document.querySelector('#pages-input')
     const imageInput  = document.querySelector('#image-input')
     const fileType = imageInput.value.slice(-3)
-    const validFileTypes = ['jpg', 'png','webp','jpeg']
     console.log(title)
     console.log(title.value)
 
     if(title.value === ''){
         title.setCustomValidity("Enter the book title");
-        title.reportValidity()
-        return true
+        title.reportValidity();
+        return true;
     }
 
     if(author.value === ''){
         author.setCustomValidity("Enter the authors name");
-        author.reportValidity()
+        author.reportValidity();
         return true;
     }
 
     console.log(pages.value)
     if(pages.value === ''){
         pages.setCustomValidity("Enter the amount of book pages");
-        pages.reportValidity()
+        pages.reportValidity();
+        return true
     }
     if(pages.value < 0){
         pages.setCustomValidity("Enter a number above 0");
-        pages.reportValidity()
+        pages.reportValidity();
+        return true
     }
 
-    // for (let i = 0; i < validFileTypes.length; i++){
-    //     if (fileType.value !== validFileTypes[i] && i === validFileTypes.length - 1){
-    //         console.log(i)
-    //         console.log(fileType)
-    //         console.log(validFileTypes[i])
-    //         imageInput.setCustomValidity("Link must be a valid image address, should end in jpeg/png/webp/jpg");
-    //         imageInput.reportValidity()
-    //         return true
-    //     }
-    // }
+    if(imageInput.value === ''){
+        imageInput.setCustomValidity('Enter an image link');
+        imageInput.reportValidity();
+        return true
+    }
 }
 
 function sumbitCard(){
@@ -108,8 +105,12 @@ function sumbitCard(){
     const addCard = document.querySelector('#add-card');
     const emptyCard = document.querySelector('#empty-card')
 
+    if(formError()) return
 
-    const newCard = `  <div class="card">
+    const id = crypto.randomUUID();
+
+    const newCard = document.createElement('div')
+    const cardHtml = `
                 <div class="top-left"></div>
                 <div class="top-right"></div>
                 <div class="bottom-left"></div>
@@ -141,17 +142,17 @@ function sumbitCard(){
                     </div>
                     <div class="id-container">
                         <p>ID</p>
-                        <p id="book-id">${crypto.randomUUID()}</p>
+                        <p id="book-id">${id}</p>
                     </div>
                 </div>
-            </div>
             `
     
+    newCard.innerHTML = cardHtml;
 
-    if(formError()) return
+    newCard.className = 'card'
+    myLibrary.push(new Book(title.value, author.value, pages.value, imageInput.value, newCard, id))
 
-    
-    addCard.insertAdjacentHTML('beforebegin', newCard)
+    addCard.insertAdjacentElement('beforebegin', newCard)
     cardCreationInProcess = false
 
     emptyCard.remove();
