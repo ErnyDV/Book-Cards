@@ -9,43 +9,55 @@
         <link rel="stylesheet" href="styles/card.css">
         <link rel="stylesheet" href="styles/addCard.css">
         <script defer src="js/cardCreation.js"></script>
+        <script defer src="js/editBooks.js"></script>
+        <script defer src="js/loadSavedCards.js"></script>
     </head>
     <body>
         <h1 class="start-text">Click the empty card to create a new book!</h1>
         <div class="main-container">
-            <!-- <div class="card">
-                <div class="top-left"></div>
-                <div class="top-right"></div>
-                <div class="bottom-left"></div>
-                <div class="bottom-right"></div>
-                <div class="card-container">
-                    <div class="background-image"></div>
-                    <div class="book-title-container">
-                        <h1 id="book-title">My Hero Academia</h1>
+            <button id="edit">Edit Books</button>
+                <!-- <div class="card-inner">
+                    <div class="top-left"></div>
+                    <div class="top-right"></div>
+                    <div class="bottom-left"></div>
+                    <div class="bottom-right"></div>
+
+                    <div class="front-card">
+                        <div style="background-image: url(https://preview.redd.it/my-hero-academia-season-7-key-visual-v0-pky1ul99fh5c1.jpg?auto=webp&s=09b8952d22b89d31e9a4b9fce132cb6f29f40cad);" class="background-image"></div>
+                        <div class="book-title-container">
+                            <h1 id="book-title">My Hero Academia</h1>
+                        </div>
+                        <div class="card-content">
+                            <div class="text-container">
+                                <img class="icon" src="icons/author.svg" alt="">
+                                <p id="book-author" class="book-text"> Kohei Horikshi</p>
+                            </div>
+                            <div class="text-container">
+                                <img class="icon" src="icons/pages.svg" alt="">
+                                <p id="book-pages">3928</p>
+                            </div>
+                            
+                            <div class="text-container">
+                                <img class="icon" src="icons/check.svg" alt="">
+                                <p id="book-read"> Read</p>
+                            </div>
+                            
+                            <div class="mark-read-container">
+                                <p>Mark as Read</p>
+                                <img id="icon-read" src="icons/checkbox.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="id-container">
+                            <p>ID</p>
+                            <p id="book-id">7583e58f-c707-48ac-97d9-1de053d904db</p>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <div class="text-container">
-                            <img class="icon" src="icons/author.svg" alt="">
-                            <p id="book-author" class="book-text"> Kohei Horikshi</p>
-                        </div>
-                        <div class="text-container">
-                            <img class="icon" src="icons/pages.svg" alt="">
-                            <p id="book-pages">3928</p>
-                        </div>
-                        
-                        <div class="text-container">
-                            <img class="icon" src="icons/check.svg" alt="">
-                            <p id="book-read"> Read</p>
-                        </div>
-                        
-                        <div class="mark-read-container">
-                            <p>Mark as Read</p>
-                            <img id="icon-read" src="icons/checkbox.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="id-container">
-                        <p>ID</p>
-                        <p id="book-id">7583e58f-c707-48ac-97d9-1de053d904db</p>
+                    <div class="back-card"> 
+                        <div class="top-left"></div>
+                        <div class="top-right"></div>
+                        <div class="bottom-left"></div>
+                        <div class="bottom-right"></div>
+                        <button style="cursor: pointer;" type="button" class="delete-card">delete</button>
                     </div>
                 </div>
             </div> -->

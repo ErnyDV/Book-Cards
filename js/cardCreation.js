@@ -2,11 +2,12 @@ let cardCreationInProcess = false;
 const addCardButton = document.querySelector('#add-card')
 const myLibrary = [];
 
-function Book(title, author, pages, read, element, id){
+function Book(title, author, pages, read, backgroundImage, element, id){
     this.title = title;
     this.author = author;
     this.pages = pages
     this.read = read
+    this.backgroundImage = backgroundImage
     this.element = element
     this.id = id
 }
@@ -56,6 +57,21 @@ function createEmptyCard(){
 }
 
 
+function validLink(link) {
+    let linkExt = link.slice(-3)
+    console.log(linkExt)
+    if (linkExt === 'jgp' || linkExt === 'png' || linkExt === ''){
+        return
+    }
+    linkExt = link.slice(-4)
+    console.log(linkExt)
+    if(linkExt === 'webp' || linkExt === 'jpeg'){
+        return
+    }
+
+    return true
+}
+
 function formError() {
     const title =  document.querySelector('#title-input')
     const author = document.querySelector('#author-input')
@@ -89,8 +105,8 @@ function formError() {
         return true
     }
 
-    if(imageInput.value === ''){
-        imageInput.setCustomValidity('Enter an image link');
+    if(imageInput.value === '' || !validLink(imageInput.value)){
+        imageInput.setCustomValidity('Enter an valid image link png/jpg/jpef/webp');
         imageInput.reportValidity();
         return true
     }
@@ -107,51 +123,61 @@ function sumbitCard(){
 
     if(formError()) return
 
-    const id = crypto.randomUUID();
 
     const newCard = document.createElement('div')
+    const id = crypto.randomUUID()
     const cardHtml = `
-                <div class="top-left"></div>
-                <div class="top-right"></div>
-                <div class="bottom-left"></div>
-                <div class="bottom-right"></div>
-                <div class="card-container">
-                    <div style="background-image: url(${imageInput.value})" class="background-image"></div>
-                    <div class="book-title-container">
-                        <h1 id="book-title">${title.value}</h1>
+                    <div class="card-inner">
+                    <div class="top-left"></div>
+                    <div class="top-right"></div>
+                    <div class="bottom-left"></div>
+                    <div class="bottom-right"></div>
+
+                    <div class="front-card">
+                        <div style="background-image: url(${imageInput.value});" class="background-image"></div>
+                        <div class="book-title-container">
+                            <h1 id="book-title">My Hero Academia</h1>
+                        </div>
+                        <div class="card-content">
+                            <div class="text-container">
+                                <img class="icon" src="icons/author.svg" alt="">
+                                <p id="book-author" class="book-text">${author.value}</p>
+                            </div>
+                            <div class="text-container">
+                                <img class="icon" src="icons/pages.svg" alt="">
+                                <p id="book-pages">${pages.value}</p>
+                            </div>
+                            
+                            <div class="text-container">
+                                <img class="icon" src="icons/check.svg" alt="">
+                                <p id="book-read">Read</p>
+                            </div>
+                            
+                            <div class="mark-read-container">
+                                <p>Mark as Read</p>
+                                <img id="icon-read" src="icons/checkbox.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="id-container">
+                            <p>ID</p>
+                            <p id="book-id">${id}</p>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <div class="text-container">
-                            <img class="icon" src="icons/author.svg" alt="">
-                            <p id="book-author" class="book-text">${author.value}</p>
-                        </div>
-                        <div class="text-container">
-                            <img class="icon" src="icons/pages.svg" alt="">
-                            <p id="book-pages">${pages.value}</p>
-                        </div>
-                        
-                        <div class="text-container">
-                            <img class="icon" src="icons/check.svg" alt="">
-                            <p id="book-read"> Read</p>
-                        </div>
-                        
-                        <div class="mark-read-container">
-                            <p>Mark as Read</p>
-                            <img id="icon-read" src="icons/checkbox.svg" alt="">
-                        </div>
-                    </div>
-                    <div class="id-container">
-                        <p>ID</p>
-                        <p id="book-id">${id}</p>
+                    <div class="back-card"> 
+                        <div class="top-left"></div>
+                        <div class="top-right"></div>
+                        <div class="bottom-left"></div>
+                        <div class="bottom-right"></div>
+                        <button style="cursor: pointer;" type="button" class="delete-card">delete</button>
                     </div>
                 </div>
+            </div>
             `
     
     newCard.innerHTML = cardHtml;
 
     newCard.className = 'card'
-    myLibrary.push(new Book(title.value, author.value, pages.value, imageInput.value, newCard, id))
-
+    myLibrary.push(new Book(title.value, author.value, pages.value, true, imageInput.value, newCard, id))
     addCard.insertAdjacentElement('beforebegin', newCard)
     cardCreationInProcess = false
 

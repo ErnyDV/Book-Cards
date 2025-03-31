@@ -1,5 +1,6 @@
 .card{
     position: relative;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,8 +15,39 @@
     border-radius: var(--main-border-radius);
 
     background-color: var(--main-color-hex);
-
+    
     z-index: 1;
+    perspective: 1000px;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    
+    width: 80%;
+    height: 50%;
+    padding: 10px 10px;
+    border-radius: 4px;
+    
+    background-color: var(--main-color-rgba);
+
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: -2;
+    gap: 15px;
+    
+    height: 96%;
+    width: 96%;
+    border-radius: var(--main-border-radius);
+    
+    background: linear-gradient(-38deg, rgba(95, 21,21, 1), rgba(255, 32, 32, 1)); 
 }
 
 .top-left{
@@ -67,26 +99,66 @@
 
 }
 
-.card-container{
+
+
+.card-inner{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+
+    backface-visibility: hidden;
+}
+
+.card:hover .card-inner{
+    transform: rotateY(180deg);
+}
+
+.front-card, .back-card{
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: -2;
     gap: 15px;
     
     height: 96%;
     width: 96%;
     border-radius: var(--main-border-radius);
-    
     background: linear-gradient(-38deg, rgba(95, 21,21, 1), rgba(255, 32, 32, 1)); 
+
+    backface-visibility: hidden;
+
+}
+
+.front-card{
+    z-index: -1;
+    
+}
+.back-card{
+    transform: rotateY(180deg);
+
+    z-index: 1;
+}
+
+.edit-card{
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+
 }
 .background-image{
     position: absolute;
     z-index: -1;
     
-    height: 96%;
-    width: 96%;
+    height: 100%;
+    width: 100%;
     
     background-size: cover;
     background-repeat: no-repeat;
@@ -114,20 +186,7 @@
     font-weight: 300;
 
 }
-.card-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    
-    width: 80%;
-    height: 50%;
-    padding: 10px 10px;
-    border-radius: 4px;
-    
-    background-color: var(--main-color-rgba);
 
-}
 
 .text-container{
     display: flex;
@@ -204,3 +263,5 @@
     height: 20px;
 
 }
+
+

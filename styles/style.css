@@ -23,6 +23,8 @@ body{
 
 
 .main-container{
+    position: relative;
+
     box-sizing: content-box;
     display: flex;
     align-items: center;
@@ -41,3 +43,28 @@ body{
     font-size: 2.6rem;
 }
 
+#edit{
+    position: absolute;
+    top: 125px;
+    border: none;
+    font-size: 2rem;
+    padding: 4px 15px;
+
+    margin-top: 5px;
+
+    color: white;
+    background-color: #ad4d4d;
+    border-radius: 8px;
+}
+
+.delete-card{
+    font-size: 2rem;
+    padding: 5px 25px;
+
+    border: none;
+
+    background-color: rgb(254, 67, 67);
+
+    border-radius: 4px;
+
+}
