@@ -115,10 +115,7 @@
 
 }
 
-.card:hover .card-inner{
-    
-    transform: rotateY(180deg);
-}
+
 
 .front-card, .back-card{
     position: absolute;

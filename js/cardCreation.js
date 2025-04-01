@@ -32,12 +32,6 @@ function createEmptyCard(){
                             <img class="icon" src="icons/pages.svg" alt="">
                             <input class="input" id="pages-input" type="number" placeholder="Amount of Pages" required>
                         </div>
-                        
-                        
-                        <div class="mark-read-container">
-                            <p>Mark as Read</p>
-                            <img id="icon-read" src="icons/uncheckedbox.svg" alt="">
-                        </div>
                     </div>
                     <div class="background-container">
                         <input class="input" id="image-input" type="text" placeholder="Background Image Link" required>
@@ -54,6 +48,7 @@ function createEmptyCard(){
 
 
     cardCreationInProcess = true
+
 }
 
 
@@ -78,6 +73,7 @@ function formError() {
     const pages = document.querySelector('#pages-input')
     const imageInput  = document.querySelector('#image-input')
     const fileType = imageInput.value.slice(-3)
+    
     console.log(title)
     console.log(title.value)
 
@@ -118,7 +114,8 @@ function sumbitCard(){
     const pages = document.querySelector('#pages-input')
     const imageInput  = document.querySelector('#image-input')
     const addCard = document.querySelector('#add-card');
-
+    const emptyCard = document.querySelector('#empty-card')
+    
     if(formError()) return
 
 
@@ -148,12 +145,12 @@ function sumbitCard(){
                             
                             <div class="text-container">
                                 <img class="icon" src="icons/check.svg" alt="">
-                                <p id="book-read">Read</p>
+                                <p id="book-read">Not Read</p>
                             </div>
                             
                             <div class="mark-read-container">
                                 <p>Mark as Read</p>
-                                <img id="icon-read" src="icons/checkbox.svg" alt="">
+                                <img onclick = "changeReadStatus()" id="icon-read" src="icons/checkbox.svg" alt="">
                             </div>
                         </div>
                         <div class="id-container">
@@ -179,6 +176,7 @@ function sumbitCard(){
     addCard.insertAdjacentElement('beforebegin', newCard)
     cardCreationInProcess = false
 
+    emptyCard.remove()
 
 }
 
