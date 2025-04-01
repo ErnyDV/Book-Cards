@@ -117,9 +117,7 @@ function sumbitCard(){
     const author = document.querySelector('#author-input')
     const pages = document.querySelector('#pages-input')
     const imageInput  = document.querySelector('#image-input')
-
     const addCard = document.querySelector('#add-card');
-    const emptyCard = document.querySelector('#empty-card')
 
     if(formError()) return
 
@@ -164,11 +162,11 @@ function sumbitCard(){
                         </div>
                     </div>
                     <div class="back-card"> 
+                        <button type="button" class="delete-card" onclick = "this.parentElement.parentElement.parentElement.remove()">delete</button>
                         <div class="top-left"></div>
                         <div class="top-right"></div>
                         <div class="bottom-left"></div>
                         <div class="bottom-right"></div>
-                        <button style="cursor: pointer;" type="button" class="delete-card">delete</button>
                     </div>
                 </div>
             </div>
@@ -181,7 +179,7 @@ function sumbitCard(){
     addCard.insertAdjacentElement('beforebegin', newCard)
     cardCreationInProcess = false
 
-    emptyCard.remove();
+
 }
 
 function cancelCard(){
@@ -237,3 +235,5 @@ addCardButton.addEventListener('click', async() => {
         })
 
 })
+
+

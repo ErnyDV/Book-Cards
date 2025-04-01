@@ -49,11 +49,11 @@ for (let book of storedCards){
                         </div>
                     </div>
                     <div class="back-card"> 
+                        <button type="button" class="delete-card" this.parentElement.parentElement.parentElement.remove()>delete</button>
                         <div class="top-left"></div>
                         <div class="top-right"></div>
                         <div class="bottom-left"></div>
                         <div class="bottom-right"></div>
-                        <button style="cursor: pointer;" type="button" class="delete-card">delete</button>
                     </div>
                 </div>
             </div>
@@ -61,6 +61,7 @@ for (let book of storedCards){
 
     newCard.innerHTML = cardHtml;
     newCard.className = 'card'
+    deleteButton.addEventListener('click', newCard.remove)
     addCard.insertAdjacentElement('beforebegin', newCard)
     book.element = newCard
     myLibrary.push(book)

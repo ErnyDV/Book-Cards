@@ -16,6 +16,11 @@
     width: 65px;
 }
 
+.options{
+    display: flex;
+
+}
+
 button{
-    cursor: pointer;
+    cursor: pointer !important;
 }
