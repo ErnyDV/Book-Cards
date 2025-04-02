@@ -115,7 +115,7 @@ function sumbitCard(){
     const imageInput  = document.querySelector('#image-input')
     const addCard = document.querySelector('#add-card');
     const emptyCard = document.querySelector('#empty-card')
-    
+
     if(formError()) return
 
 
@@ -159,7 +159,7 @@ function sumbitCard(){
                         </div>
                     </div>
                     <div class="back-card"> 
-                        <button type="button" class="delete-card" onclick = "this.parentElement.parentElement.parentElement.remove()">delete</button>
+                        <button type="button" class="delete-card" onclick = "removeCard(this.parentElement.parentElement.parentElement)">delete</button>
                         <div class="top-left"></div>
                         <div class="top-right"></div>
                         <div class="bottom-left"></div>
@@ -173,6 +173,7 @@ function sumbitCard(){
 
     newCard.className = 'card'
     myLibrary.push(new Book(title.value, author.value, pages.value, true, imageInput.value, newCard, id))
+
     addCard.insertAdjacentElement('beforebegin', newCard)
     cardCreationInProcess = false
 

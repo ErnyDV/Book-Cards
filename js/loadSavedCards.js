@@ -49,7 +49,7 @@ for (let book of storedCards){
                         </div>
                     </div>
                     <div class="back-card"> 
-                        <button type="button" class="delete-card" onclick = this.parentElement.parentElement.parentElement.remove()>delete</button>
+                        <button type="button" class="delete-card" onclick = "removeCard(this.parentElement.parentElement.parentElement)">delete</button>
                         <div class="top-left"></div>
                         <div class="top-right"></div>
                         <div class="bottom-left"></div>
